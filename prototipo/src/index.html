@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Protótipo — Sistema de Gestão Universitária</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<!-- =============== TELA 01 — LOGIN =============== -->
+<section id="tela-login">
+  <div class="login-card">
+    <div class="brasao">SGU</div>
+    <h1>Sistema de Gestão Universitária</h1>
+    <p class="sub">Projeto Integrador — 2ª etapa · Protótipo de interface</p>
+    <div class="msg msg-erro" id="login-msg"><strong>Credenciais inválidas</strong>Verifique o usuário e a senha informados.</div>
+    <div class="campo" style="margin-bottom:14px">
+      <label for="login-user">Usuário <span class="obr">*</span></label>
+      <input id="login-user" name="login-user" autocomplete="username" value="admin">
+    </div>
+    <div class="campo" style="margin-bottom:14px">
+      <label for="login-senha">Senha <span class="obr">*</span></label>
+      <input type="password" id="login-senha" name="login-senha" autocomplete="current-password" value="12345">
+    </div>
+    <div class="campo" style="margin-bottom:22px">
+      <label for="login-perfil">Perfil de acesso (ator do diagrama de caso de uso)</label>
+      <select id="login-perfil" name="login-perfil">
+        <option value="TODOS">Todos os módulos (visão do avaliador)</option>
+        <option value="SECRETARIO_ACADEMICO">Secretário Acadêmico</option>
+        <option value="COORDENADOR_CURSO">Coordenador de Curso</option>
+        <option value="ASSISTENTE_ADMINISTRATIVO">Assistente Administrativo</option>
+        <option value="GESTOR_PROJETO">Gestor de Projeto</option>
+      </select>
+      <div class="dica">O usuário administrador assume o perfil do ator selecionado; o menu exibe apenas os casos de uso desse ator.</div>
+    </div>
+    <button class="btn btn-1" style="width:100%" onclick="entrar()">Entrar</button>
+  </div>
+</section>
+
+<!-- =============== APLICAÇÃO =============== -->
+<div id="app">
+  <header>
+    <div class="titulo"><span class="sigla">SGU</span> Sistema de Gestão Universitária</div>
+    <div class="usuario">
+      <span id="hd-nome"></span>
+      <span class="perfil" id="hd-perfil"></span>
+      <button onclick="sair()">Sair</button>
+    </div>
+  </header>
+  <nav id="menu"></nav>
+  <main id="conteudo"></main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
